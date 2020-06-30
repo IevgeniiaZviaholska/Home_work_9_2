@@ -5,7 +5,7 @@ body{
     background-color: rgba(217, 54, 0, 0.1);
     font-family: "Lato", sans-serif;
 }
-.conteiner{
+.container{
     max-width: 1170px;
     margin-left: auto;
     margin-right: auto;
@@ -42,20 +42,22 @@ hr{
 .grid{
     display: flex;
     flex-wrap: wrap; 
-    margin: -15px;
     padding-bottom: 117px;
+    
 }
 .grid-item{
     width: calc(100% / 4 - 30px);
+    height: auto;
+    object-fit: cover;
     margin: 15px; 
 }
-.card{
-    max-height: 323px;    
-}
 
-.card-imege{  
+.imagine{      
     width: 100%; 
+    height: 100%;
     object-fit: cover; 
+    opacity: 0.9;   
+   
 }
 .card-name{
     color: #646464;
@@ -66,33 +68,37 @@ hr{
     font-size: 14px;
     font-weight: 300;
 }
-.card a{
-    display: block; 
-    position: relative; 
+.card{
+    display: block;
+    position: relative;
+       
 }
-.card a::after {
-    content: '';
-    position: absolute; 
+.social{  
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    position: absolute;
     top: 0; 
     left: 0; 
     right: 0; 
     bottom: 0; 
-    background: rgb(0, 174, 217, 0.9);  
-    opacity: 0;
+    z-index: 2; 
+    background: rgb(0, 174, 217, 0.9);
+    opacity: 0;   
 }
-.card a::before {
-    content: ''; 
-    position: absolute;
-    top: 110px; 
-    left: 35px; 
-    right: 35px; 
-    bottom: 110px; 
-    background: url(social.png);
-    background-repeat: no-repeat; 
-    background-position: center;
+.social a{  
+    background: rgba(255, 255, 255, 0.5);    
+    width: 30px;
+    height: 30px;
     opacity: 0; 
-    z-index: 2;
+    margin: 2px;
+    text-align: center;
+    padding-top: 3px;
 }
-.card a:hover:before, .card a:hover:after { 
+.social a:hover{
+    background-color: rgba(217, 54, 0, 0.1);
+}
+.card:hover .social a,
+.card:hover .social { 
     opacity: 1; 
 }
